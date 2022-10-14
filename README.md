@@ -17,14 +17,14 @@ az aks get-credentials --resource-group VMware-RG --name vmwareaks01
 docker run -it --rm -p 8000:80 --name aspnetcore_sample mcr.microsoft.com/dotnet/samples:aspnetapp
 ```
 
-## Retag and push to ACR:
+## Retag and push to docker hub:
 ```
-docker login tshapelabacr01.azurecr.io
-Username: tshapeuser
+docker login <username>
+Username: <username>
 Password: <password>
 docker images
-docker tag <source image> tshapelabacr01.azurecr.io/<target image>:<tag>
-docker push tshapelabacr01.azurecr.io/<target image>:<tag>
+docker tag <source image> <username>/<target image>:<tag>
+docker push <username>/<target image>:<tag>
 ```
 
 
@@ -35,7 +35,7 @@ docker push tshapelabacr01.azurecr.io/<target image>:<tag>
 
 * Deploy the app:
 ```
-kubectl create deployment <your-name>01 --image=tshapelabacr01.azurecr.io/<your-image-name>:v1 --replicas=2
+kubectl create deployment <your-name>01 --image=<username>/<target image>:<tag> --replicas=2
 
 kubectl get deployments
 
