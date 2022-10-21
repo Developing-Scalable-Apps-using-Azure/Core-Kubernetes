@@ -1,7 +1,12 @@
 
 # Working with core Kubernetes
 
-## Set kubernetes context
+## Using Minikube
+```
+minikube start
+```
+
+## Using Docker Desktop - Set kubernetes context
 ```
  kubectl config use-context docker-desktop
 ```
