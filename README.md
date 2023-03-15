@@ -1,9 +1,13 @@
 
 # Working with core Kubernetes
 
-## Using Minikube
+## Using AKS
 ```
-minikube start
+az login
+
+az account set --subscription b214611b-9a79-4e7e-afb0-3d9785737f10
+
+az aks get-credentials --resource-group SB-AKS-RG-01 --name sbaks01
 ```
 
 ## Using Docker Desktop - Set kubernetes context
