@@ -1,5 +1,5 @@
 
-# Working with core Kubernetes
+# Working with AKS and ACR
 
 ## Using AKS
 ```
