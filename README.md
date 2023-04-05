@@ -5,9 +5,10 @@
 ```
 az login
 
-az account set --subscription b214611b-9a79-4e7e-afb0-3d9785737f10
+az account set --subscription 79080195-8aac-4282-8f0d-5910cb4209c0
 
-az aks get-credentials --resource-group SB-AKS-RG-01 --name sbaks01
+az aks get-credentials --resource-group Sid-Lab-RG-01 --name aksdelta01
+
 ```
 
 ## Using Docker Desktop - Set kubernetes context
@@ -23,12 +24,19 @@ docker run -it --rm -p 8000:80 --name aspnetcore_sample mcr.microsoft.com/dotnet
 
 ## Retag and push to docker hub:
 ```
-docker login <username>
+For Docker Hub:
+docker login <username> 
 Username: <username>
 Password: <password>
+
+For ACR:
+az acr login -n acrdelta01
+Username: <username>
+Password: <password>
+
 docker images
-docker tag <source image> <username>/<target image>:<tag>
-docker push <username>/<target image>:<tag>
+docker tag <source image> acrdelta01.azurecr.io/<target image>:<tag>
+docker push acrdelta01.azurecr.io/<target image>:<tag>
 ```
 
 
