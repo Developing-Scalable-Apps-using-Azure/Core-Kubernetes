@@ -7,7 +7,7 @@ az login
 
 az account set --subscription 79080195-8aac-4282-8f0d-5910cb4209c0
 
-az aks get-credentials --resource-group Sid-Lab-RG-01 --name aksdelta01
+az aks get-credentials --resource-group Sid-RG-01 --name aksdelta01
 
 ```
 
@@ -61,7 +61,7 @@ kubectl scale deployment < your-deployment-name> --replicas=3
 ### Update the app:
 Retag and push v2 of the image to docker hub 
 ```
-kubectl set image deployment/<your-deployment-name> <container-name>= <username>/<target>:v2 --record=true
+kubectl set image deployment/<your-deployment-name> <container-name>=<username>/<target>:v2
 ```
 Verify the upgrade 
 ```
