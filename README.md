@@ -29,7 +29,7 @@ docker login <username>
 Username: <username>
 Password: <password>
 
-For ACR:
+For Azure ACR:
 az acr login -n acrdelta01
 Username: <username>
 Password: <password>
